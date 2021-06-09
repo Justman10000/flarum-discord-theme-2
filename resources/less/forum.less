@@ -342,3 +342,32 @@ article.CommentPost.Post.Post--by-start-user .Post-header h3 span.username:after
 .GroupList-UserList-item a {
     color: var(--fld-grey);
 }
+
+// Discussion thing
+.DiscussionListItem-info {
+    color: var(--fld-grey);
+}
+
+@media (max-width: 767px){
+    .DiscussionListItem-content:active {
+        background: var(--fld-bg-2);
+    }
+}
+@media (max-width: 767px){
+    .item-discussion-views {
+        background: var(--fld-bg-2-dark) !important;
+        color: var(--fld-grey) !important;
+    }
+}
+@media (max-width: 767px){
+    .unread .DiscussionListItem-count {
+        background: var(--fld-blurple) !important;
+        color: var(--fld-white) !important;
+        font-weight: bold;
+    }
+}
+// Post
+.Post-body pre {
+    background: var(--fld-bg-2);
+    color: var(--fld-grey);
+}
