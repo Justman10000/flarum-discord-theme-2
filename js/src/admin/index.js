@@ -1,5 +1,11 @@
 import app from 'flarum/app';
 
 app.initializers.add('serakoi/flarumdiscordtheme', () => {
-  console.log('[serakoi/flarumdiscordtheme] Hello, forum!');
+  app.extensionData.for('serakoi-flarumdiscordtheme').registerSetting({
+    setting: 'serakoi-flarumdiscordtheme.coordinates',
+    name: 'Mynamesettings',
+    type: 'text',
+    label: app.translator.trans('serakoi-flarumdiscordtheme.admin.afterxpost'),
+    help: app.translator.trans('serakoi-flarumdiscordtheme.admin.afterxpostdesc'),
+  });
 });
