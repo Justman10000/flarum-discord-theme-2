@@ -123,6 +123,17 @@ flarum_app__WEBPACK_IMPORTED_MODULE_2___default.a.initializers.add('serakoi/flar
   Object(flarum_extend__WEBPACK_IMPORTED_MODULE_0__["extend"])(flarum_components_HeaderPrimary__WEBPACK_IMPORTED_MODULE_1___default.a.prototype, 'view', function (vdom) {
     var authorBadgeText = flarum_app__WEBPACK_IMPORTED_MODULE_2___default.a.forum.attribute('authorBadge') ? flarum_app__WEBPACK_IMPORTED_MODULE_2___default.a.forum.attribute('authorBadge').toString() : "Author";
     console.log('Test:', authorBadgeText);
+    var flar_css = "article.CommentPost.Post.Post--by-start-user .Post-header h3 span.username:after { \n      content: \"" + authorBadgeText + "\"; \n    }",
+        flar_head = document.head || document.getElementsByTagName('head')[0],
+        flar_style = document.createElement('style');
+    flar_head.appendChild(flar_style);
+
+    if (flar_style.styleSheet) {
+      // This is required for IE8 and below.
+      flar_style.styleSheet.cssText = flar_css;
+    } else {
+      flar_style.appendChild(document.createTextNode(flar_css));
+    }
   });
 });
 
