@@ -5,6 +5,7 @@ import app from 'flarum/app';
 app.initializers.add('serakoi/flarumdiscordtheme', () => {
   extend(HeaderPrimary.prototype, 'view', (vdom) => {
     let authorBadgeText = app.forum.attribute('authorBadge') ? app.forum.attribute('authorBadge').toString() : "Author";
+    let isAlreadyModified = false;
 
     var flar_css = `article.CommentPost.Post.Post--by-start-user .Post-header h3 span.username:after { 
       content: "${authorBadgeText}"; 
@@ -15,17 +16,14 @@ app.initializers.add('serakoi/flarumdiscordtheme', () => {
 
     flar_head.appendChild(flar_style);
 
-    function checkIfStyleExists(){
-      if(document.getElementById("serakoi-discordtheme-authorbadge")[0]) return true;
-      return false;
-    }
-
     if (flar_style.styleSheet){
-      if(checkIfStyleExists()) return;
+      if(isAlreadyModified) return;
       flar_style.styleSheet.cssText = flar_css;
+      return isAlreadyModified = true;
     } else {
-      if(checkIfStyleExists()) return;
+      if(isAlreadyModified) return;
       flar_style.appendChild(document.createTextNode(flar_css));
+      return isAlreadyModified = true;
     }
   });
 });

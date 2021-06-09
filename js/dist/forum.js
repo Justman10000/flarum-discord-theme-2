@@ -122,23 +122,21 @@ __webpack_require__.r(__webpack_exports__);
 flarum_app__WEBPACK_IMPORTED_MODULE_2___default.a.initializers.add('serakoi/flarumdiscordtheme', function () {
   Object(flarum_extend__WEBPACK_IMPORTED_MODULE_0__["extend"])(flarum_components_HeaderPrimary__WEBPACK_IMPORTED_MODULE_1___default.a.prototype, 'view', function (vdom) {
     var authorBadgeText = flarum_app__WEBPACK_IMPORTED_MODULE_2___default.a.forum.attribute('authorBadge') ? flarum_app__WEBPACK_IMPORTED_MODULE_2___default.a.forum.attribute('authorBadge').toString() : "Author";
+    var isAlreadyModified = false;
     var flar_css = "article.CommentPost.Post.Post--by-start-user .Post-header h3 span.username:after { \n      content: \"" + authorBadgeText + "\"; \n    }",
         flar_head = document.head || document.getElementsByTagName('head')[0],
         flar_style = document.createElement('style');
     flar_style.id = "serakoi-discordtheme-authorbadge";
     flar_head.appendChild(flar_style);
 
-    function checkIfStyleExists() {
-      if (document.getElementById("serakoi-discordtheme-authorbadge")[0]) return true;
-      return false;
-    }
-
     if (flar_style.styleSheet) {
-      if (checkIfStyleExists()) return;
+      if (isAlreadyModified) return;
       flar_style.styleSheet.cssText = flar_css;
+      return isAlreadyModified = true;
     } else {
-      if (checkIfStyleExists()) return;
+      if (isAlreadyModified) return;
       flar_style.appendChild(document.createTextNode(flar_css));
+      return isAlreadyModified = true;
     }
   });
 });
