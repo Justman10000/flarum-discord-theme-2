@@ -97,9 +97,7 @@ module.exports =
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _src_forum__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./src/forum */ "./src/forum/index.js");
-/* harmony import */ var _src_forum__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_src_forum__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _src_forum__WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _src_forum__WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
-
+/* empty/unused harmony star reexport */
 
 /***/ }),
 
@@ -107,12 +105,41 @@ __webpack_require__.r(__webpack_exports__);
 /*!****************************!*\
   !*** ./src/forum/index.js ***!
   \****************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var flarum_app__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! flarum/app */ "flarum/app");
+/* harmony import */ var flarum_app__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(flarum_app__WEBPACK_IMPORTED_MODULE_0__);
+
+flarum_app__WEBPACK_IMPORTED_MODULE_0___default.a.initializers.add('serakoi/flarumdiscordtheme', function () {
+  var authorBadgeText = flarum_app__WEBPACK_IMPORTED_MODULE_0___default.a.forum.attribute('authorBadge') ? flarum_app__WEBPACK_IMPORTED_MODULE_0___default.a.forum.attribute('authorBadge').toString() : "Author";
+  var flar_head = document.getElementsByTagName("HEAD")[0];
+
+  if (flar_head) {
+    var ext_style = document.createElement('style');
+    flar_head.appendChild(ext_style);
+    var customBadgeCss = "\n      article.CommentPost.Post.Post--by-start-user .Post-header h3 span.username:after {\n        content: " + authorBadgeText + ";\n      }\n    ";
+
+    if (style.styleSheet) {
+      ext_style.styleSheet.cssText = customBadgeCss;
+    } else {
+      ext_style.appendChild(document.createTextNode(customBadgeCss));
+    }
+  }
+});
+
+/***/ }),
+
+/***/ "flarum/app":
+/*!********************************************!*\
+  !*** external "flarum.core.compat['app']" ***!
+  \********************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-app.initializers.add('serakoi/flarumdiscordtheme', function () {
-  console.log('[serakoi/flarumdiscordtheme] Hello, forum!');
-});
+module.exports = flarum.core.compat['app'];
 
 /***/ })
 
