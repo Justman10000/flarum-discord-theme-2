@@ -17,6 +17,8 @@ app.initializers.add('serakoi/flarumdiscordtheme', () => {
 
     flar_head.appendChild(flar_style);
 
+    console.log(document.getElementById("serakoi-discordtheme-authorbadge").lengthC)
+
     function checkIfStyleExists(){
       if(document.getElementById("serakoi-discordtheme-authorbadge")[0]) return true;
       return false;
