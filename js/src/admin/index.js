@@ -1,4 +1,3 @@
-// Big thanks to: https://discuss.flarum.org/u/Justoverclock for helping!
 import app from 'flarum/app';
 
 app.initializers.add('serakoi/flarumdiscordtheme', () => {
@@ -6,7 +5,7 @@ app.initializers.add('serakoi/flarumdiscordtheme', () => {
     setting: 'serakoi-flarumdiscordtheme.coordinates',
     name: 'Mynamesettings',
     type: 'text',
-    label: app.translator.trans('serakoi-flarumdiscordtheme.admin.settings.authorBadge.label'),
-    help: app.translator.trans('serakoi-flarumdiscordtheme.admin.settings.authorBadge.help'),
+    label: app.translator.trans('serakoi-flarumdiscordtheme.admin.afterxpost'),
+    help: app.translator.trans('serakoi-flarumdiscordtheme.admin.afterxpostdesc'),
   });
 });
