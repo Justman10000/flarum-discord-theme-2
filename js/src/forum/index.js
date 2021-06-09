@@ -6,8 +6,6 @@ app.initializers.add('serakoi/flarumdiscordtheme', () => {
   extend(HeaderPrimary.prototype, 'view', (vdom) => {
     let authorBadgeText = app.forum.attribute('authorBadge') ? app.forum.attribute('authorBadge').toString() : "Author";
 
-    console.log('Test:',authorBadgeText)
-
     var flar_css = `article.CommentPost.Post.Post--by-start-user .Post-header h3 span.username:after { 
       content: "${authorBadgeText}"; 
     }`,
@@ -16,8 +14,6 @@ app.initializers.add('serakoi/flarumdiscordtheme', () => {
     flar_style.id = "serakoi-discordtheme-authorbadge";
 
     flar_head.appendChild(flar_style);
-
-    console.log(document.getElementById("serakoi-discordtheme-authorbadge").length)
 
     function checkIfStyleExists(){
       if(document.getElementById("serakoi-discordtheme-authorbadge")[0]) return true;
