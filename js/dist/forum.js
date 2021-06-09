@@ -128,7 +128,7 @@ flarum_app__WEBPACK_IMPORTED_MODULE_2___default.a.initializers.add('serakoi/flar
         flar_style = document.createElement('style');
     flar_style.id = "serakoi-discordtheme-authorbadge";
     flar_head.appendChild(flar_style);
-    console.log(document.getElementById("serakoi-discordtheme-authorbadge").lengthC);
+    console.log(document.getElementById("serakoi-discordtheme-authorbadge").length);
 
     function checkIfStyleExists() {
       if (document.getElementById("serakoi-discordtheme-authorbadge")[0]) return true;
