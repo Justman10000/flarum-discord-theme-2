@@ -114,7 +114,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var flarum_app__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(flarum_app__WEBPACK_IMPORTED_MODULE_0__);
 
 flarum_app__WEBPACK_IMPORTED_MODULE_0___default.a.initializers.add('serakoi/flarumdiscordtheme', function () {
-  console.log('[serakoi/flarumdiscordtheme] Hello, forum!');
+  flarum_app__WEBPACK_IMPORTED_MODULE_0___default.a.extensionData["for"]('serakoi-flarumdiscordtheme').registerSetting({
+    setting: 'serakoi-flarumdiscordtheme.coordinates',
+    name: 'Mynamesettings',
+    type: 'text',
+    label: flarum_app__WEBPACK_IMPORTED_MODULE_0___default.a.translator.trans('serakoi-flarumdiscordtheme.admin.afterxpost'),
+    help: flarum_app__WEBPACK_IMPORTED_MODULE_0___default.a.translator.trans('serakoi-flarumdiscordtheme.admin.afterxpostdesc')
+  });
 });
 
 /***/ }),
