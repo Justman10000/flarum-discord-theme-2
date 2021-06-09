@@ -110,26 +110,20 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var flarum_app__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! flarum/app */ "flarum/app");
-/* harmony import */ var flarum_app__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(flarum_app__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var flarum_extend__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! flarum/extend */ "flarum/extend");
+/* harmony import */ var flarum_extend__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(flarum_extend__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var flarum_components_HeaderPrimary__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! flarum/components/HeaderPrimary */ "flarum/components/HeaderPrimary");
+/* harmony import */ var flarum_components_HeaderPrimary__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(flarum_components_HeaderPrimary__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var flarum_app__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! flarum/app */ "flarum/app");
+/* harmony import */ var flarum_app__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(flarum_app__WEBPACK_IMPORTED_MODULE_2__);
 
-flarum_app__WEBPACK_IMPORTED_MODULE_0___default.a.initializers.add('serakoi/flarumdiscordtheme', function () {
-  var authorBadgeText = flarum_app__WEBPACK_IMPORTED_MODULE_0___default.a.forum.attribute('authorBadge') ? flarum_app__WEBPACK_IMPORTED_MODULE_0___default.a.forum.attribute('authorBadge').toString() : "Author";
-  console.log(authorBadgeText); // const flar_head = document.getElementsByTagName("HEAD")[0];
-  // if(flar_head){
-  //   const ext_style = document.createElement('style');
-  //   flar_head.appendChild(ext_style);
-  //   let customBadgeCss = `
-  //     article.CommentPost.Post.Post--by-start-user .Post-header h3 span.username:after {
-  //       content: ${authorBadgeText};
-  //     }
-  //   `
-  //   if (style.styleSheet){
-  //     ext_style.styleSheet.cssText = customBadgeCss;
-  //   } else {
-  //     ext_style.appendChild(document.createTextNode(customBadgeCss));
-  //   }
-  // }
+
+
+flarum_app__WEBPACK_IMPORTED_MODULE_2___default.a.initializers.add('serakoi/flarumdiscordtheme', function () {
+  Object(flarum_extend__WEBPACK_IMPORTED_MODULE_0__["extend"])(flarum_components_HeaderPrimary__WEBPACK_IMPORTED_MODULE_1___default.a.prototype, 'view', function (vdom) {
+    var authorBadgeText = flarum_app__WEBPACK_IMPORTED_MODULE_2___default.a.forum.attribute('authorBadge') ? flarum_app__WEBPACK_IMPORTED_MODULE_2___default.a.forum.attribute('authorBadge').toString() : "Author";
+    console.log('Test:', authorBadgeText);
+  });
 });
 
 /***/ }),
@@ -142,6 +136,28 @@ flarum_app__WEBPACK_IMPORTED_MODULE_0___default.a.initializers.add('serakoi/flar
 /***/ (function(module, exports) {
 
 module.exports = flarum.core.compat['app'];
+
+/***/ }),
+
+/***/ "flarum/components/HeaderPrimary":
+/*!*****************************************************************!*\
+  !*** external "flarum.core.compat['components/HeaderPrimary']" ***!
+  \*****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = flarum.core.compat['components/HeaderPrimary'];
+
+/***/ }),
+
+/***/ "flarum/extend":
+/*!***********************************************!*\
+  !*** external "flarum.core.compat['extend']" ***!
+  \***********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = flarum.core.compat['extend'];
 
 /***/ })
 
