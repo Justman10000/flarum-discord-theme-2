@@ -3,23 +3,25 @@ import app from 'flarum/app';
 app.initializers.add('serakoi/flarumdiscordtheme', () => {
   let authorBadgeText = app.forum.attribute('authorBadge') ? app.forum.attribute('authorBadge').toString() : "Author";
 
-  const flar_head = document.getElementsByTagName("HEAD")[0];
+  console.log(authorBadgeText)
 
-  if(flar_head){
-    const ext_style = document.createElement('style');
+  // const flar_head = document.getElementsByTagName("HEAD")[0];
 
-    flar_head.appendChild(ext_style);
+  // if(flar_head){
+  //   const ext_style = document.createElement('style');
 
-    let customBadgeCss = `
-      article.CommentPost.Post.Post--by-start-user .Post-header h3 span.username:after {
-        content: ${authorBadgeText};
-      }
-    `
+  //   flar_head.appendChild(ext_style);
 
-    if (style.styleSheet){
-      ext_style.styleSheet.cssText = customBadgeCss;
-    } else {
-      ext_style.appendChild(document.createTextNode(customBadgeCss));
-    }
-  }
+  //   let customBadgeCss = `
+  //     article.CommentPost.Post.Post--by-start-user .Post-header h3 span.username:after {
+  //       content: ${authorBadgeText};
+  //     }
+  //   `
+
+  //   if (style.styleSheet){
+  //     ext_style.styleSheet.cssText = customBadgeCss;
+  //   } else {
+  //     ext_style.appendChild(document.createTextNode(customBadgeCss));
+  //   }
+  // }
 });

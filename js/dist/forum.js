@@ -115,19 +115,21 @@ __webpack_require__.r(__webpack_exports__);
 
 flarum_app__WEBPACK_IMPORTED_MODULE_0___default.a.initializers.add('serakoi/flarumdiscordtheme', function () {
   var authorBadgeText = flarum_app__WEBPACK_IMPORTED_MODULE_0___default.a.forum.attribute('authorBadge') ? flarum_app__WEBPACK_IMPORTED_MODULE_0___default.a.forum.attribute('authorBadge').toString() : "Author";
-  var flar_head = document.getElementsByTagName("HEAD")[0];
-
-  if (flar_head) {
-    var ext_style = document.createElement('style');
-    flar_head.appendChild(ext_style);
-    var customBadgeCss = "\n      article.CommentPost.Post.Post--by-start-user .Post-header h3 span.username:after {\n        content: " + authorBadgeText + ";\n      }\n    ";
-
-    if (style.styleSheet) {
-      ext_style.styleSheet.cssText = customBadgeCss;
-    } else {
-      ext_style.appendChild(document.createTextNode(customBadgeCss));
-    }
-  }
+  console.log(authorBadgeText); // const flar_head = document.getElementsByTagName("HEAD")[0];
+  // if(flar_head){
+  //   const ext_style = document.createElement('style');
+  //   flar_head.appendChild(ext_style);
+  //   let customBadgeCss = `
+  //     article.CommentPost.Post.Post--by-start-user .Post-header h3 span.username:after {
+  //       content: ${authorBadgeText};
+  //     }
+  //   `
+  //   if (style.styleSheet){
+  //     ext_style.styleSheet.cssText = customBadgeCss;
+  //   } else {
+  //     ext_style.appendChild(document.createTextNode(customBadgeCss));
+  //   }
+  // }
 });
 
 /***/ }),
