@@ -126,12 +126,19 @@ flarum_app__WEBPACK_IMPORTED_MODULE_2___default.a.initializers.add('serakoi/flar
     var flar_css = "article.CommentPost.Post.Post--by-start-user .Post-header h3 span.username:after { \n      content: \"" + authorBadgeText + "\"; \n    }",
         flar_head = document.head || document.getElementsByTagName('head')[0],
         flar_style = document.createElement('style');
+    flar_style.id = "serakoi-discordtheme-authorbadge";
     flar_head.appendChild(flar_style);
 
+    function checkIfStyleExists() {
+      if (document.getElementById("serakoi-discordtheme-authorbadge")[0]) return true;
+      return false;
+    }
+
     if (flar_style.styleSheet) {
-      // This is required for IE8 and below.
+      if (checkIfStyleExists()) return;
       flar_style.styleSheet.cssText = flar_css;
     } else {
+      if (checkIfStyleExists()) return;
       flar_style.appendChild(document.createTextNode(flar_css));
     }
   });
