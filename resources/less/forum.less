@@ -43,7 +43,8 @@ a {
 }
 
 .App-header .Button {
-    color: var(--fld-blurple);
+    color: var(--fld-grey) !important;
+    background-color: var(--fld-bg-2);
 }
 
 .App-header .Button:hover {
@@ -330,4 +331,14 @@ article.CommentPost.Post.Post--by-start-user .Post-header h3 span.username:after
         background: var(--fld-bg-2) !important;
         color: #fff !important;
     }
+}
+
+// Notifications
+.Notification.unread {
+    background: var(--fld-bg-2);
+}
+
+// Group list intergration
+.GroupList-UserList-item a {
+    color: var(--fld-grey);
 }
