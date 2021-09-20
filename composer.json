@@ -32,7 +32,7 @@
   "extra": {
     "flarum-extension": {
       "title": "Discord Theme",
-      "category": "",
+      "category": "theme",
       "icon": {
         "name": "fab fa-discord",
         "backgroundColor": "#5865F2",
